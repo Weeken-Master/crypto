@@ -59,14 +59,14 @@ export function ListProduct({ data }: ListProductProps) {
       {/* Map through the current products and render them */}
       {currentProducts.map((product, index) => (
         <div key={index} className='item shadow-lg hover:shadow-gray-400 focus:zoom-in rounded-bl-[5px] rounded-br-[5px] px-1 py-1'>
-          <Link href="#">
+          <Link href="/product/name-product-i.index">
             <div className='relative z-0 w-full pt-full'>
-              <div className='item-image'>
+              <div className='item-image ' >
                 <Image 
                   loading='lazy'
                   src={product.image}
                   alt={product.title} 
-                  className="w-full h-auto object-cover" 
+                  className="w-full h-auto object-cover  rounded-tr-md  rounded-tl-md" 
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   width={500} 
                   height={500}
@@ -84,8 +84,8 @@ export function ListProduct({ data }: ListProductProps) {
                 />
               </div>
             </div>
-            <div className='p-2 flex-1 flex flex-col justify-between bg-gray-100 rounded-md'>
-            <div className='mb-1 whitespace-normal line-clamp-2 break-words min-h-[2.5rem] text-sm '>
+            <div className='p-2 flex-1 flex flex-col justify-between bg-gray-100  rounded-bl-md rounded-br-md'>
+            <div className='mb-1 whitespace-normal line-clamp-2 break-words min-h-[2.5rem] text-sm  text-gray-900'>
                     <span></span>
                     <Image 
                         loading='lazy'
@@ -98,7 +98,7 @@ export function ListProduct({ data }: ListProductProps) {
                         />
                     HT67 Váy ngủ sexy pha lê siêu đẹp tặng CHÍP, đầm ngủ ren mềm mại quyến rũ Haayan Boutique HT67
                 </div>
-              <div className="flex justify-between items-center space-x-1">
+              <div className="flex justify-between items-center space-x-1 text-gray-900">
                 <div className="max-w-full flex-grow-1 flex-shrink-0 truncate text-shopee-primary flex items-center font-medium">
                   <span aria-label="promotion price">Rase</span>
                   <div className="truncate flex items-baseline">
@@ -107,7 +107,7 @@ export function ListProduct({ data }: ListProductProps) {
                     <span className="text-xs/sp14 font-medium mr-px"></span>
                   </div>
                 </div>
-                <div className="truncate text-shopee-black87 text-xs min-h-4 flex-shrink-1 ml-auto">View: 234,9k</div>
+                <div className="truncate text-shopee-black87 text-xs min-h-4 flex-shrink-1 ml-auto ">View: 234,9k</div>
               </div>
               <div className="flex justify-center items-center bg-neutral-400 rounded-md">
                 <Countdown targetDate='2024-12-31T00:00:00'/>

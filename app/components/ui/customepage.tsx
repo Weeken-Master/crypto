@@ -1,42 +1,18 @@
 import Image from "next/image"
-import Link from "next/link"
-import { ModeToggle } from "../mode"
-import { SwitchLangugae } from "../switch-language"
-import logo from "../../../public/images/logo.png"
-import tele from "../../../public/images/tele.png"
-import mobility_bouns from "../../../public/images/mobility_bouns.png"
-import mobility_upcoin from "../../../public/images/mobility_upcoin.png"
-import {
-  ChevronLeft,
-  ChevronRight,
-  Copy,
-  CreditCard,
-  File,
-  Home,
- 
-  ListFilter,
-  MoreVertical,
- 
-  Package2,
-  PanelLeft,
-  Search,
-  Settings,
-  ShoppingCart,
-  Truck,
 
-  ChartCandlestick,
-  TabletSmartphone
+import { Tokenmics } from "../tokenmic"
+import {
+   ChevronRight,
+   ChevronLeft,
+   Truck,
+   ListFilter,
+   File
+
 } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+import mobility_bouns from "../../../public/images/mobility_bouns.png"
+import mobility_upcoin from "../../../public/images/mobility_upcoin.png"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -55,7 +31,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
+
 import {
   Pagination,
   PaginationContent,
@@ -63,96 +39,27 @@ import {
 } from "@/components/ui/pagination"
 // import { Progress } from "@/components/ui/progress"
 import { Separator } from "@/components/ui/separator"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
+  
 } from "@/components/ui/tabs"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-  TooltipProvider,
-} from "@/components/ui/tooltip"
-import { ReactNode } from "react";
+
+
+import { MoreVertical, Copy, CreditCard } from "lucide-react"
 
 
 
 
-
-
-export const description =
-  "An orders dashboard with a sidebar navigation. The sidebar has icon navigation. The content area has a breadcrumb and search in the header. The main area has a list of recent orders with a filter and export button. The main area also has a detailed view of a single order with order details, shipping information, billing information, customer information, and payment information."
-
- 
 
 import { ListProduct } from "../list_product"
+
+
+
 export function Dashboard() {
-
-  interface TooltipItem {
-    index:number,
-    href: string;
-    icon: ReactNode;
-    srText: string;
-    tooltipText: string;
-    extraClasses?: string;
-  }
-  
-  const renderTooltipItem = (  index:number,href: string, icon: ReactNode, srText: string, tooltipText: string, extraClasses: string = "") => {
-    return (
-      <Tooltip key={index}>
-        <TooltipProvider>
-          <TooltipTrigger asChild>
-            <Link
-              href={href}
-              className={`flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8 ${extraClasses}`}
-            >
-              {icon}
-              <span className="sr-only">{srText}</span>
-            </Link>
-          </TooltipTrigger>
-          <TooltipContent side="right">{tooltipText}</TooltipContent>
-        </TooltipProvider>
-      </Tooltip>
-    );
-  };
-
-  const tooltipData: TooltipItem[] = [
-    {
-      index:1,
-      href: "#",
-      icon: <Home className="h-5 w-5" />,
-      srText: "Trang chủ",
-      tooltipText: "Trang chủ",
-    },
-    {
-      index:2,
-      href: "/trading-platform",
-      icon: <ChartCandlestick className="h-5 w-5" />,
-      srText: "Sàn Airdrop",
-      tooltipText: "Sàn Airdrop",
-      extraClasses: "bg-accent text-accent-foreground",
-    },
-    {
-      index:3,
-      href: "#",
-      icon: <Image className="h-5 w-5" src={tele} alt="Telegram Icon" />,
-      srText: "Telegram",
-      tooltipText: "Telegram Airdrop",
-      extraClasses: "bg-accent text-accent-foreground",
-    },
-    {
-      index:4,
-      href: "#",
-      icon: <TabletSmartphone className="h-5 w-5" />,
-      srText: "Tool",
-      tooltipText: "Tool Airdrop",
-      extraClasses: "bg-accent text-accent-foreground",
-    },
-  ];
 
 
 
@@ -193,160 +100,11 @@ export function Dashboard() {
 
 
   return (
-    <div className="flex min-h-screen w-full flex-col bg-muted/40">
-      <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
-        <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
-          <Link
-            href="#"
-            className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
-          >
-            <Package2 className="h-4 w-4 transition-all group-hover:scale-110" />
-            <span className="sr-only">Acme Inc</span>
-          </Link>
-
-          
-        <TooltipProvider>
-          
-        {tooltipData.map((item, index) =>
-        renderTooltipItem(index,item.href, item.icon, item.srText, item.tooltipText, item.extraClasses)
-          )}
-        
-        </TooltipProvider>
-
-       
-        </nav>
-        <nav className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">
-        <TooltipProvider>
-           <Tooltip>
-          <TooltipProvider>
-            <TooltipTrigger asChild>
-              <Link
-                href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
-              >
-                <Settings className="h-5 w-5" />
-                <span className="sr-only">Settings</span>
-              </Link>
-            </TooltipTrigger>
-            <TooltipContent side="right">Settings</TooltipContent>
-            </TooltipProvider>
-          </Tooltip> 
-         </TooltipProvider>
-        </nav>
-      </aside>
-
-
-      <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
-        {/* header */}
-        <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button size="icon" variant="outline" className="sm:hidden">
-                <PanelLeft className="h-5 w-5" />
-                <span className="sr-only">Toggle Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="sm:max-w-xs">
-              <nav className="grid gap-6 text-lg font-medium">
-                <Link
-                  href="#"
-                  className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
-                >
-                  <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
-                  <span className="sr-only">Acme Inc</span>
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                >
-                  <Home className="h-5 w-5" />
-                  Mobile
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-foreground"
-                >
-                  <ShoppingCart className="h-5 w-5" />
-                  Orders
-                </Link>
-              
-              </nav>
-            </SheetContent>
-          </Sheet>
-          <Breadcrumb className="hidden md:flex">
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link href="#">a </Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link href="#">b</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>c</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-          <div className="relative ml-auto flex-2 md:grow-0">
-        
-            <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search..."
-              className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]"
-            />
-            
-          </div>
-          
-          <ModeToggle/>
-          <div>
-          <SwitchLangugae initialLanguage="vi" /> 
-     
-          </div>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="outline"
-                size="icon"
-                className="overflow-hidden rounded-full"
-              >
-                <Image
-                  src={logo}
-                  width={36}
-                  height={36}
-                  alt="Avatar"
-                  className="overflow-hidden rounded-full"
-                />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </header>
-
-
-
-
-
-
-
-
-
-        
-        <main className="grid flex-1 items-start gap-4  sm:px-6 sm:py-0  md:px-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-3">
-          <div className="grid auto-rows-max items-start gap-4 md:gap-8 lg:col-span-2">
-            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
+ 
+  
+        <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 xl:grid-cols-3">
+      <div className="grid auto-rows-max items-start gap-4 md:gap-8 lg:col-span-2">
+        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
               <Card
                 className="sm:col-span-2" x-chunk="dashboard-05-chunk-0"
               >
@@ -388,8 +146,7 @@ export function Dashboard() {
               </Card>
             </div>
 
-            <div className="flex md:flex justify-center"><Badge variant="default" className="text-2xl text-center">Top airdrop listing (TGE)</Badge>
-            </div>
+            <div className="flex md:flex justify-center"><Badge variant="default" className="text-2xl text-center px-1 py-1">Top Aridrop</Badge></div>
             <Tabs defaultValue="week">
               <div className="flex items-center">
                 <TabsList>
@@ -441,13 +198,17 @@ export function Dashboard() {
                  b
               </TabsContent>
             </Tabs>
-          </div>
-          <div>
+          </div> 
+
+
+
+          {/*  do tk này */}
+          <div  >
             <Card
               className="overflow-hidden" x-chunk="dashboard-05-chunk-4"
             >
               <CardHeader className="flex flex-row items-start bg-muted/50">
-                <div className="grid gap-0.5">
+                {/* <div className=">
                   <CardTitle className="group flex items-center gap-2 text-lg">
                     BEP20: 0x006a918741415eddc3331b6b0c1a04a4584eec91
                     <Button
@@ -459,7 +220,18 @@ export function Dashboard() {
                       <span className="sr-only"></span>
                     </Button>
                   </CardTitle>
-                  <CardDescription>Ủng hộ đội ngũ website là một hành động quan trọng, thể hiện sự đoàn kết và cam kết của tất cả thành viên trong việc xây dựng và phát triển một nền tảng trực tuyến chất lượng. Sự hỗ trợ này không chỉ giúp cải thiện hiệu suất làm việc, mà còn tạo ra một môi trường sáng tạo, nơi mọi người cùng nhau cống hiến ý tưởng và nỗ lực để mang lại trải nghiệm tốt nhất cho người dùng.</CardDescription>
+                 
+                </div> */}
+                <div>
+                <CardTitle className="">
+                  <Button size="sm" variant="outline" className="h-8 gap-1">
+                    <Copy className="h-3.5 w-3.5" />
+                    <span className="lg:sr-only xl:not-sr-only xl:whitespace-nowrap">
+                      Bep20
+                    </span>
+                  </Button>
+                </CardTitle>
+               
                 </div>
                 <div className="ml-auto flex items-center gap-1">
                   <Button size="sm" variant="outline" className="h-8 gap-1">
@@ -486,7 +258,9 @@ export function Dashboard() {
               </CardHeader>
               <CardContent className="p-6 text-sm">
                 <div className="grid gap-3">
-                  <div className="font-semibold">Bounus <details></details></div>
+                  <div className="font-semibold">Danh sách ủng hộ website (bep20): 0x006a918741415eddc3331b6b0c1a04a4584eec91 <details></details>
+                  
+                  </div>
                   <ul className="grid gap-3">
                     <li className="flex items-center justify-between">
                       <span className="text-muted-foreground">
@@ -510,43 +284,9 @@ export function Dashboard() {
                       <span>$3.2</span>
                     </li>
                   </ul>
-                  {/* <Separator className="my-2" />
-                  <ul className="grid gap-3">
-                    <li className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Subtotal</span>
-                      <span>$299.00</span>
-                    </li>
-                    <li className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Shipping</span>
-                      <span>$5.00</span>
-                    </li>
-                    <li className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Tax</span>
-                      <span>$25.00</span>
-                    </li>
-                    <li className="flex items-center justify-between font-semibold">
-                      <span className="text-muted-foreground">Total</span>
-                      <span>$329.00</span>
-                    </li>
-                  </ul> */}
+                  
                 </div>
-                {/* <Separator className="my-4" />
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="grid gap-3">
-                    <div className="font-semibold">Shipping Information</div>
-                    <address className="grid gap-0.5 not-italic text-muted-foreground">
-                      <span>Liam Johnson</span>
-                      <span>1234 Main St.</span>
-                      <span>Anytown, CA 12345</span>
-                    </address>
-                  </div>
-                  <div className="grid auto-rows-max gap-3">
-                    <div className="font-semibold">Billing Information</div>
-                    <div className="text-muted-foreground">
-                      Same as shipping address
-                    </div>
-                  </div>
-                </div> */}
+               
                 <Separator className="my-4" />
                 <div className="grid gap-3">
                   <div className="font-semibold">Thông tin liên hệ</div>
@@ -569,6 +309,33 @@ export function Dashboard() {
                     </div>
                   </dl>
                 </div>
+                <Separator className="my-4" />
+               
+              </CardContent>
+
+
+
+
+
+
+
+
+
+              <CardContent className="p-6 text-sm">
+
+                <div className="grid gap-3">
+                  <div className="font-semibold"> Chi tiết về Aridrop Group
+                
+                  <CardDescription>Mọi phần thưởng Aridrop  Ref dưới nhóm sẽ được chia đều cho các thành viên tham gia. Nếu  Aridrop có hạn sẽ được phân bổ dạng quà ngẫu nhiên</CardDescription>
+                  </div>
+                  <div className="grid gap-3">
+                 
+
+                   <Tokenmics/>
+                  </div>
+                  
+                </div>
+               
                 <Separator className="my-4" />
                 <div className="grid gap-3">
                   <div className="font-semibold">Payment Information</div>
@@ -606,8 +373,14 @@ export function Dashboard() {
               </CardFooter> 
             </Card>
           </div>
+
+
         </main>
-      </div>
+    
+
+
+
+ 
 
 
 
@@ -617,12 +390,6 @@ export function Dashboard() {
 
 
 
-
-
-
-
-
-      
-    </div>
+   
   )
 }
