@@ -67,36 +67,39 @@ export function Dashboard() {
     title: string;
     image: string;
     banner:string;
+    status: string;
+    favourite:number;
+    rase_is:number;   
+    review: string;
+    rase_1:string;
+    rase_2:string;
+    rase_3:string;
+    time_end:string;  
+    view:number;
+
+
   }
   const list_product: Product[]=[
-    { title: 'Product 1', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium', banner:'binance' },
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 3', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 4', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 5', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 6', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 1', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium', banner:'binance' },
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 1', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium', banner:'binance' },
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-    { title: 'Product 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium' , banner:'binance'},
-
-  ]  
-
-
+    { title: 'Airdrop : Đào token WYND với tiện ích Grass Đào token WYND với tiện ích Grass irdrop : Đào token WYND với tiện ích Grass Đào token WYND với tiện ích Grass', image: 'https://pbs.twimg.com/media/GYYU3YSaEAA8G-S?format=jpg&name=medium', banner:'binance',status:"New", favourite:1,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial",time_end:"2024-12-31T00:00:00",view:100.00  },
+   
+    { title: 'Airdrop : Đào token WYND với tiện ích Grass 2 Đào token WYND với tiện ích Grass', image: 'https://pbs.twimg.com/media/GYZs24JWgAAvZ8W?format=jpg&name=medium', banner:'bingx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial",time_end:"2024-12-31T00:00:00",view:91.2  },
+    { title: 'Airdrop : Đào token WYND với tiện ích Grass 2', image: 'https://pbs.twimg.com/media/GXqjiNibEAECRYK?format=jpg&name=medium', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:94 },
+    { title: 'Airdrop : Đào token WYND với tiện ích Grass 2Đào token WYND với tiện ích Grass', image: 'https://pbs.twimg.com/media/GYZs24JWgAAvZ8W?format=jpg&name=medium', banner:'mexc',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial",time_end:"2024-12-31T00:00:00",view:94  },
+    
+    { title: 'Airdrop : Đào token WYND với tiện ích Grass 2', image: 'https://pbs.twimg.com/media/GYZs24JWgAAvZ8W?format=jpg&name=medium', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:94 },
+    { title: 'Airdrop : Đào token WYND với tiện ích Grass 2 Đào token WYND với tiện ích Grass', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:94 },  
+    { title: 'Airdrop : Đào token WYND với tiện ích Grass 2', image: 'https://pbs.twimg.com/media/GXqjiNibEAECRYK?format=jpg&name=medium  ', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:94 },
+    { title: 'Airdrop : Đào token WYND với tiện ích Grass Đào token WYND với tiện ích Grass', image: 'https://pbs.twimg.com/media/GYYU3YSaEAA8G-S?format=jpg&name=medium', banner:'binance',status:"New", favourite:1,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial",time_end:"2024-12-31T00:00:00",view:94  },
+   
+    { title: 'Airdrop : Đào token WYND với tiện ích Grass 2 Đào token WYND với tiện ích Grass', image: 'https://pbs.twimg.com/media/GYZs24JWgAAvZ8W?format=jpg&name=medium', banner:'bingx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial",time_end:"2024-12-31T00:00:00",view:81  },
+    { title: 'Airdrop : Đào token WYND với tiện ích Grass 2', image: 'https://pbs.twimg.com/media/GXqjiNibEAECRYK?format=jpg&name=medium', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:81 },
+    { title: 'Airdrop : Đào token WYND với tiện ích Grass 2Đào token WYND với tiện ích Grass', image: 'https://pbs.twimg.com/media/GYZs24JWgAAvZ8W?format=jpg&name=medium', banner:'mexc',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial",time_end:"2024-12-31T00:00:00",view:81  },
+    
+    { title: 'Airdrop : Đào token WYND với tiện ích Grass 2', image: 'https://pbs.twimg.com/media/GYZs24JWgAAvZ8W?format=jpg&name=medium', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:100.00 },
+    { title: 'Airdrop : Đào token WYND với tiện ích Grass 2 Đào token WYND với tiện ích Grass', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:100.00 },  
+    { title: 'Airdrop : Đào token WYND với tiện ích Grass 2', image: 'https://pbs.twimg.com/media/GXqjiNibEAECRYK?format=jpg&name=medium  ', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:100.00 },
+  
+  ]
 
 
   return (
@@ -146,13 +149,16 @@ export function Dashboard() {
               </Card>
             </div>
 
-            <div className="flex md:flex justify-center"><Badge variant="default" className="text-2xl text-center px-1 py-1">Top Aridrop</Badge></div>
-            <Tabs defaultValue="week">
-              <div className="flex items-center">
+            <div className="flex md:flex justify-center"><Badge variant="default" className="text-2xl text-center px-1 py-1 rounded-sm">Top Aridrop</Badge></div>
+            <Tabs defaultValue="Hot">
+              <div className="flex items-center md:text-sm">
                 <TabsList>
-                  <TabsTrigger value="week">Tất cả</TabsTrigger>
-                  <TabsTrigger value="month">Telegram</TabsTrigger>
-                  <TabsTrigger value="year">Game defi</TabsTrigger>
+                  <TabsTrigger value="Hot">Hot</TabsTrigger>
+                  <TabsTrigger value="tele">Telegram</TabsTrigger>
+                  <TabsTrigger value="game">Game</TabsTrigger>
+                  <TabsTrigger value="testnet">Testnet</TabsTrigger>
+                  {/* <TabsTrigger value="nv">Nhiệm vụ mạng xã hội</TabsTrigger> */}
+                  {/* <TabsTrigger value="retroactive">Retroactive</TabsTrigger>  */}
                 </TabsList>
                 <div className="ml-auto flex items-center gap-2">
                   <DropdownMenu>
@@ -180,22 +186,36 @@ export function Dashboard() {
                       </DropdownMenuCheckboxItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
+                  
                   <Button
                     size="sm"
                     variant="outline"
-                    className="h-7 gap-1 text-sm"
+                    className="h-7 gap-1 text-sm md:none"
                   >
                     <File className="h-3.5 w-3.5" />
                     <span className="sr-only sm:not-sr-only">Tải xuống</span>
                   </Button>
                 </div>
               </div>
-              <TabsContent value="week">
+              <TabsContent value="Hot">
                    <ListProduct data ={list_product}/>
               </TabsContent>
 
-              <TabsContent value="month">
+              <TabsContent value="tele">
                  b
+              </TabsContent>
+              <TabsContent value="game">
+                 c
+              </TabsContent>
+              <TabsContent value="testnet">
+                 d
+              </TabsContent>
+              <TabsContent value="nv">
+                 nhiệm vụ xã hội
+              </TabsContent>
+
+              <TabsContent value="retroactive">
+              retroactive
               </TabsContent>
             </Tabs>
           </div> 

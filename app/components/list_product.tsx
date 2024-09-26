@@ -3,14 +3,27 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 import Link from 'next/link';
-import logobinance  from "../../public/images/logobiannce2.png"
-
-  
+// import logobinance  from "../../public/images/logobiannce2.png"
+// import logookx from "../../public/images/okxlogo.png"
+// import logomexc from "../../public/images/mexclogo.png"
+// import logbingx from "../../public/images/bingxlogo.png"
+import { Separator } from "@/components/ui/separator"
+// import choiceas from "../../public/images/choice.png"
 // Define the interface for a product
 interface Product {
   title: string;
-  image: string;
-  banner:string;
+    image: string;
+    banner:string;
+    status: string;
+    favourite:number;
+    rase_is:number;   
+    review: string;
+    rase_1:string;
+    rase_2:string;
+    rase_3:string;
+    time_end:string;
+    view:number;
+
 }
 
 // Define the props interface to include the list of products
@@ -30,6 +43,9 @@ import {
 
 } from "@/components/ui/pagination"; // Adjust the import path as necessary
 
+
+import { Star , Eye, CircleDollarSign} from 'lucide-react';
+import { Button } from '@/components/ui/button';
 // ListProduct component accepting data as a prop
 const productsPerPage = 18; // Adjust the number of products per page as needed
 
@@ -55,10 +71,10 @@ export function ListProduct({ data }: ListProductProps) {
 
   return (
     <div>
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
       {/* Map through the current products and render them */}
       {currentProducts.map((product, index) => (
-        <div key={index} className='item shadow-lg hover:shadow-gray-400 focus:zoom-in rounded-bl-[5px] rounded-br-[5px] px-1 py-1'>
+        <div key={index} className='item shadow-xl hover:shadow-gray-800 focus:zoom-in rounded-bl-[5px] rounded-br-[5px] px-1 py-1     rounded-md'>
           <Link href="/product/name-product-i.index">
             <div className='relative z-0 w-full pt-full'>
               <div className='item-image ' >
@@ -67,51 +83,85 @@ export function ListProduct({ data }: ListProductProps) {
                   src={product.image}
                   alt={product.title} 
                   className="w-full h-auto object-cover  rounded-tr-md  rounded-tl-md" 
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40 vw"
                   width={500} 
                   height={500}
                 />
               </div>
-              <div className='item-banner absolute top-0 right-0 rounded-md'>
-                <Image 
+              <div className='item-banner absolute top-1 right-1 rounded-md'>
+                {/* <Image 
                   loading='lazy'
-                  src={logobinance} // Assuming banner is an image URL
+                  src={ product.banner =="binance"?logobinance:product.banner =="okx"?logookx:product.banner =="bingx"?logbingx:product.banner =="mexc"?logomexc:logobinance} // Assuming banner is an image URL
                   alt={product.title} 
                   className="w-full h-auto object-cover rounded-sm" 
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 10vw, 5vw"
                   width={20} 
                   height={20} 
-                />
+                /> */}
+              </div>
+              <div className='item-banner absolute top-2   right-1 rounded-md bg-background-gray-300'>
+                 <div className='status bg-gray-950 px-1 py-1 w-10 text-left rounded-md text-white text-sm opacity-80 '>
+                    {product.status}
+                 </div>
               </div>
             </div>
             <div className='p-2 flex-1 flex flex-col justify-between bg-gray-100  rounded-bl-md rounded-br-md'>
-            <div className='mb-1 whitespace-normal line-clamp-2 break-words min-h-[2.5rem] text-sm  text-gray-900'>
+            <div className='whitespace-normal line-clamp-2 break-words min-h-[2.5rem] text-sm  text-gray-900 text-align-center'>
                     <span></span>
-                    <Image 
+                   
+                    {/* <Image 
                         loading='lazy'
-                        src='https://down-vn.img.susercontent.com/file/vn-11134258-7r98o-lyb3l2w2maml9a'
+                        src= {product.favourite == 1?'https://down-vn.img.susercontent.com/file/vn-11134258-7r98o-lyb3l2w2maml9a': choiceas}
                         alt={product.title} 
                         // className="w-full h-auto object-cover" 
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         width={60} // Placeholder width, as Next.js requires it
                         height={30} // Placeholder height, as Next.js requires it
-                        />
-                    HT67 Váy ngủ sexy pha lê siêu đẹp tặng CHÍP, đầm ngủ ren mềm mại quyến rũ Haayan Boutique HT67
+                        /> */}
+                   
+                       <b className='text-gray-700 text-base'>{product.title}</b> 
                 </div>
               <div className="flex justify-between items-center space-x-1 text-gray-900">
                 <div className="max-w-full flex-grow-1 flex-shrink-0 truncate text-shopee-primary flex items-center font-medium">
-                  <span aria-label="promotion price">Rase</span>
+                  <span aria-label="promotion price"> <CircleDollarSign className='text-sm'/></span>
                   <div className="truncate flex items-baseline">
-                    <span className="text-xs/sp14 font-medium mr-px">:</span>
-                    <span className="font-medium text-base/5 truncate">3M $</span>
+                    <span className="text-xs/sp14 font-medium mr-px">=</span>
+                    <span className="font-medium text-base/5 truncate">{product.rase_is}M $</span>
                     <span className="text-xs/sp14 font-medium mr-px"></span>
                   </div>
                 </div>
-                <div className="truncate text-shopee-black87 text-xs min-h-4 flex-shrink-1 ml-auto ">View: 234,9k</div>
+                <div className="truncate text-shopee-black87 text-xs min-h-4 flex-shrink-1 ml-auto flex items-center "><Eye className='text-base'/> <span className='px-1 text-base'>{product.view}k</span></div>
               </div>
-              <div className="flex justify-center items-center bg-neutral-400 rounded-md">
-                <Countdown targetDate='2024-12-31T00:00:00'/>
+              <div className='task-review mt-1 mb-1'>
+              <div>
+                  <div className="space-y-1">
+                    <div className='flex justify-start items-center'>
+                      <div className='text-gray-700'>
+                         <Star className='text-base'/>
+                      </div>
+                    <h4 className="text-sm font-medium leading-none px-2 text-gray-600">Task review</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      {product.review}
+                    </p>
+                  </div>
+                  <Separator className="my-4" />
+                  <div className="flex h-5 items-center space-x-4 text-sm text-gray-500">
+                    <div>{product.rase_1}</div>
+                    <Separator orientation="vertical" />
+                    <div>{product.rase_2}</div>
+                    <Separator orientation="vertical" />
+                    <div>{product.rase_3}</div>
+                  </div>
+                </div>
               </div>
+                   
+              <div className="flex justify-center items-center  mt-2 ">
+               
+                <Button className='w-full'><Countdown targetDate={product.time_end}/></Button>
+              </div>
+
+              
             </div>
           </Link>
         </div>

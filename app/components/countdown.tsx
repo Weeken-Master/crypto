@@ -1,4 +1,5 @@
 "use client"
+  
 import { useState, useEffect } from "react";
 
 // Define the props type for the countdown component
@@ -40,8 +41,8 @@ const Countdown = ({ targetDate }: CountdownProps) => {
   }, [targetDate]);
 
   return (
-    <div className="text-gray-950 ">
-     {`${timeLeft.days}d : ${timeLeft.hours}h : ${timeLeft.minutes}m : ${timeLeft.seconds}s`}
+    <div className=" ">
+     <span >{`${timeLeft.days}d : ${timeLeft.hours}h : ${timeLeft.minutes}m : ${timeLeft.seconds}s`}</span>
     </div>
   );
 };
