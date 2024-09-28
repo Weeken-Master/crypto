@@ -77,7 +77,7 @@ const Header = () => {
              Trang chủ
           </Link>
           <Link
-            href="/trading-platform"
+            href="/san-airdrop"
             className="flex items-center gap-4 px-2.5 text-foreground"
           >
             <ChartCandlestick className="h-5 w-5" />
