@@ -90,7 +90,7 @@ export default function Trading() {
               >
                 <CardHeader className="pb-3">
                   <CardTitle className="flex justify-between"> <h3 className="text-md">Hoàn phí giao dịch 70% </h3> 
-                  <Badge className="text-sm">Mỗi tháng bạn sẽ được Hoàn Phí giao dịch  "Lên Đến 70%"</Badge> </CardTitle>
+                  <Badge className="text-sm">Mỗi tháng bạn sẽ được Hoàn Phí giao dịch </Badge> </CardTitle>
                   <CardDescription className="g text-balance leading-relaxed w-full">
                   Hoàn phí giao dịch trên các sàn crypto như Binance, MEXC, BingX, và OKX là một trong những lợi ích lớn cho người dùng khi thực hiện giao dịch tiền điện tử. Đây là chương trình nhằm khuyến khích các nhà giao dịch tham gia nhiều hơn vào hệ sinh thái của sàn bằng cách giảm bớt chi phí giao dịch. Mỗi sàn sẽ có những chính sách hoàn phí khác nhau, thường dựa trên khối lượng giao dịch, loại token được giao dịch hoặc việc sử dụng token nội bộ 
                   <br/>Hoàn phí dựa trên khối lượng giao dịch hoặc phí vào lệnh người chơi
