@@ -10,9 +10,10 @@ import {
   PlusCircle,
  
   DollarSignIcon,
+ 
 
 } from "lucide-react"
-
+import telegramicon from "../../../public/images/tele.png"
 import { Badge } from "@/components/ui/badge"
 // import {
 //   Breadcrumb,
@@ -63,26 +64,51 @@ export function DetailProduct() {
         rase_3:string;
         time_end:string;  
         view:number;
+        description:string;
+        linkyoutube: string;
+        task: string;
+        premarket:number;
+        laupach:string;
+        img1:string;
+        img2:string;
+        img3:string;
+        img4:string
+
+
     
     
       }
-      const list_product: Product[]=[
-        { title: 'Airdrop : Đào token WYND với tiện ích Grass Đào token WYND với tiện ích Grass',
-         image: 'https://pbs.twimg.com/media/GYYU3YSaEAA8G-S?format=jpg&name=medium', 
-         banner:'binance',
-         status:"New",
+      const product: Product =
+        { title: 'Đào token WYND với tiện ích Grass Đào token WYND với tiện ích Grass',
+          image: 'https://pbs.twimg.com/media/GYYU3YSaEAA8G-S?format=jpg&name=medium', 
+          banner:'binance',
+          status:"New",
           favourite:1,
           rase_is:1,
-           review:"Dự án đã gọi vốn thành công 1M$",
-           rase_1:"Okx ventus", 
-           rase_2:"BinanceLabs", 
-           rase_3:"Captial",
-           time_end:"2024-12-31T00:00:00",
-            view:100.00  },
+          review:"Dự án đã gọi vốn thành công 1M$",
+          rase_1:"Okx ventus", 
+          rase_2:"BinanceLabs", 
+          rase_3:"Captial",
+          time_end:"2024-12-31T00:00:00",
+          view:100.00,
+          description:"Lipsum dolor sit amet, consectetur adipiscing elit",
+          linkyoutube: '<iframe    width="100%"      src="https://www.youtube.com/embed/a3acDNn7cBY?si=Z2X-qflr5RjW9k6J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+          task: 'Lipsum dolor sit amet, consectetur adipiscing elit',
+          premarket:0.3,
+          laupach:"",
+          img1:"https://pbs.twimg.com/media/GYYU3YSaEAA8G-S?format=jpg&name=medium",
+          img2:"https://pbs.twimg.com/media/GYYU3YSaEAA8G-S?format=jpg&name=medium",
+          img3:"https://pbs.twimg.com/media/GYYU3YSaEAA8G-S?format=jpg&name=medium",
+          img4:"https://pbs.twimg.com/media/GYYU3YSaEAA8G-S?format=jpg&name=medium"
+
+
+
+        
+        }
        
        
-      ]
-      const iframeContent = `<iframe   width="100%"      src="https://www.youtube.com/embed/a3acDNn7cBY?si=Z2X-qflr5RjW9k6J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+      
+     
   return (
 
         
@@ -103,8 +129,15 @@ export function DetailProduct() {
                  Rase: 10M$
               </Badge>
               <div className="hidden items-center gap-2 md:ml-auto md:flex">
+                {/* <Button variant="outline" size="sm">
+                 
+                </Button> */}
                 <Button variant="outline" size="sm">
-                  Join Telegram
+                Join Telegram
+                    <Image src={telegramicon} alt=""   className="w-full h-auto object-cover rounded-sm px-1" 
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 3vw, 1vw"
+                  width={1} 
+                  height={2}  ></Image>
                 </Button>
                 <Button size="sm">Làm ngay</Button>
               </div>
@@ -114,9 +147,10 @@ export function DetailProduct() {
              
                 <Card x-chunk="dashboard-07-chunk-0">
                   <CardHeader>
-                    <CardTitle>Airdrop : Đào token WYND với tiện ích Grass Đào token WYND với tiện ích Grass</CardTitle>
+                    <CardTitle className=""><Badge className=" px-2 text-base">Airdrop</Badge>
+                    <span className="px-2">{product.title}</span></CardTitle>
                     <CardDescription>
-                      Mô tả nhẹ Lipsum dolor sit amet, consectetur adipiscing elit
+                     {product.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -159,7 +193,7 @@ export function DetailProduct() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                  <YouTubeEmbed iframeHtml={iframeContent} />
+                  <YouTubeEmbed iframeHtml={product.linkyoutube} />
                   </CardContent>
                   <CardFooter className="justify-center border-t p-4">
                     <Button size="sm" variant="ghost" className="gap-1">
@@ -183,7 +217,7 @@ export function DetailProduct() {
               <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
                 <Card x-chunk="dashboard-07-chunk-3">
                   <CardHeader>
-                    <CardTitle>Trạng thái</CardTitle>
+                    <CardTitle>Trạng thái + Thông tin</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-6">
@@ -196,6 +230,8 @@ export function DetailProduct() {
                     </div>
                       
                       </div>
+
+                      <span>Đang cập nhật</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -267,6 +303,7 @@ export function DetailProduct() {
               </div>
             </div>
             <div className="flex items-center justify-center gap-2 md:hidden">
+            
               <Button variant="outline" size="sm">
                 Join Telegram
               </Button>

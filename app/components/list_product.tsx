@@ -3,11 +3,15 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 import Link from 'next/link';
-// import logobinance  from "../../public/images/logobiannce2.png"
-// import logookx from "../../public/images/okxlogo.png"
-// import logomexc from "../../public/images/mexclogo.png"
+import { Badge } from '@/components/ui/badge';
+import binancelogo from "../../public/images/binnce3.jpg"
+import logomexc from "../../public/images/mexclogo.png"
+import bingx from "../../public/images/bingxlogo.png"
+import okx from "../../public/images/okxlogo.png"
+import bybit from "../../public/images/bybitlogo2.png"
+import bitget from "../../public/images/bitget.png"
 // import logbingx from "../../public/images/bingxlogo.png"
-import { Separator } from "@/components/ui/separator"
+// import { Separator } from "@/components/ui/separator"
 // import choiceas from "../../public/images/choice.png"
 // Define the interface for a product
 interface Product {
@@ -23,6 +27,7 @@ interface Product {
     rase_3:string;
     time_end:string;
     view:number;
+    type:number; //1 binance 2 okx 3 bybit 4 bingx 5 mexc 6 biget
 
 }
 
@@ -86,26 +91,29 @@ export function ListProduct({ data }: ListProductProps) {
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40 vw"
                   width={500} 
                   height={500}
+                  style={{minHeight:"12rem", maxHeight:"12.5rem"}}
                 />
               </div>
-              <div className='item-banner absolute top-1 right-1 rounded-md'>
-                {/* <Image 
+              {product.type <=6?
+              <div className='item-banner absolute top-5 left-1 rounded-md bg-gray-900 py-1 px-1'>
+                <Image 
                   loading='lazy'
-                  src={ product.banner =="binance"?logobinance:product.banner =="okx"?logookx:product.banner =="bingx"?logbingx:product.banner =="mexc"?logomexc:logobinance} // Assuming banner is an image URL
+                  src={product.type == 1? binancelogo:product.type == 2? okx:product.type == 3? bybit:product.type == 4? bingx:product.type == 5? logomexc:bitget} // Assuming banner is an image URL
                   alt={product.title} 
                   className="w-full h-auto object-cover rounded-sm" 
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 10vw, 5vw"
-                  width={20} 
-                  height={20} 
-                /> */}
-              </div>
+                  width={product.type == 1?5:20} 
+                  height={product.type == 1?5:20} 
+                />
+              </div>:""
+                }
               <div className='item-banner absolute top-2   right-1 rounded-md bg-background-gray-300'>
                  <div className='status bg-gray-950 px-1 py-1 w-10 text-left rounded-md text-white text-sm opacity-80 '>
                     {product.status}
                  </div>
               </div>
             </div>
-            <div className='p-2 flex-1 flex flex-col justify-between bg-gray-100  rounded-bl-md rounded-br-md'>
+            <div className='p-2 flex-1 flex flex-col justify-between bg-gray-100  rounded-bl-md rounded-br-md ' style={{minHeight:"12.8rem", maxHeight:"12.888rem"}}>
             <div className='whitespace-normal line-clamp-2 break-words min-h-[2.5rem] text-sm  text-gray-900 text-align-center'>
                     <span></span>
                    
@@ -119,7 +127,8 @@ export function ListProduct({ data }: ListProductProps) {
                         height={30} // Placeholder height, as Next.js requires it
                         /> */}
                    
-                       <b className='text-gray-700 text-base'>{product.title}</b> 
+                       <b className='text-gray-700 text-base'> <Badge className='text-sm'>
+                       Airdrop</Badge>{product.title}</b> 
                 </div>
               <div className="flex justify-between items-center space-x-1 text-gray-900">
                 <div className="max-w-full flex-grow-1 flex-shrink-0 truncate text-shopee-primary flex items-center font-medium">
@@ -145,14 +154,14 @@ export function ListProduct({ data }: ListProductProps) {
                       {product.review}
                     </p>
                   </div>
-                  <Separator className="my-4" />
-                  <div className="flex h-5 items-center space-x-4 text-sm text-gray-500">
+                  {/* <Separator className="my-4" /> */}
+                  {/* <div className="flex h-5 items-center space-x-4 text-sm text-gray-500">
                     <div>{product.rase_1}</div>
                     <Separator orientation="vertical" />
                     <div>{product.rase_2}</div>
                     <Separator orientation="vertical" />
                     <div>{product.rase_3}</div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
                    

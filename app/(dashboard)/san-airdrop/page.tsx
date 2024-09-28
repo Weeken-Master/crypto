@@ -1,8 +1,9 @@
 
+import Trading from "@/app/components/ui/custometrading";
 export default function page() {
   return (
    <div className="">
-     Trang chủ 
+     <Trading/>
    
    </div>
   );

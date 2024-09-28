@@ -49,14 +49,14 @@ const  SlideBar = () => {
       const tooltipData: TooltipItem[] = [
         {
           index:1,
-          href: "/home",
+          href: "/trang-chu",
           icon: <Home className="h-5 w-5" />,
           srText: "Trang chủ",
           tooltipText: "Trang chủ",
         },
         {
           index:2,
-          href: "/trading-platform",
+          href: "/san-airdrop",
           icon: <ChartCandlestick className="h-5 w-5" />,
           srText: "Sàn Airdrop",
           tooltipText: "Sàn Airdrop",
