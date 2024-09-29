@@ -66,10 +66,17 @@ export default function Trading() {
     { title: ' Đào token WYND với tiện ích Grass 2', image: 'https://pbs.twimg.com/media/GXqjiNibEAECRYK?format=jpg&name=medium', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:94,type:3,isPinned: false },
     { title: ' Đào token WYND với tiện ích Grass 2Đào token WYND với tiện ích Grass', image: 'https://pbs.twimg.com/media/GYZs24JWgAAvZ8W?format=jpg&name=medium', banner:'mexc',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial",time_end:"2024-12-31T00:00:00",view:94 ,type:1,isPinned: false },
     
+<<<<<<< HEAD
     { title: ' Đào token WYND với tiện ích Grass 2', image: 'https://pbs.twimg.com/media/GYZs24JWgAAvZ8W?format=jpg&name=medium', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:94,type:1,isPinned: false },
     { title: ' Đào token WYND với tiện ích Grass 2 Đào token WYND với tiện ích Grass', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:94,type:4 ,isPinned: false},  
     { title: ' Đào token WYND với tiện ích Grass 2', image: 'https://pbs.twimg.com/media/GXqjiNibEAECRYK?format=jpg&name=medium  ', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:94,type:1,isPinned: false },
     { title: ' Đào token WYND với tiện ích Grass Đào token WYND với tiện ích Grass', image: 'https://pbs.twimg.com/media/GYYU3YSaEAA8G-S?format=jpg&name=medium', banner:'binance',status:"New", favourite:1,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial",time_end:"2024-12-31T00:00:00",view:94 ,type:1,isPinned: false },
+=======
+    { title: ' Đào token WYND với tiện ích Grass 2', image: 'https://pbs.twimg.com/media/GYZs24JWgAAvZ8W?format=jpg&name=medium', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:94,type:1 },
+    { title: ' Đào token WYND với tiện ích Grass 2 Đào token WYND với tiện ích Grass', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:94,type:4 },  
+    { title: ' Đào token WYND với tiện ích Grass 2', image: 'https://pbs.twimg.com/media/GKaaaUJXQAAzlFN?format=jpg&name=medium', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:94,type:1 },
+    { title: ' Đào token WYND với tiện ích Grass Đào token WYND với tiện ích Grass', image: 'https://pbs.twimg.com/media/GYYU3YSaEAA8G-S?format=jpg&name=medium', banner:'binance',status:"New", favourite:1,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial",time_end:"2024-12-31T00:00:00",view:94 ,type:1 },
+>>>>>>> f8fffed5c515d8fc68647efbf3c51287e0ffed69
    
     { title: ' PIn sản phẩms 2', image: 'https://pbs.twimg.com/media/GYZs24JWgAAvZ8W?format=jpg&name=medium', banner:'bingx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial",time_end:"2024-12-31T00:00:00",view:81 ,type:5,isPinned: true },
     { title: ' Đào token WYND với tiện ích Grass 2', image: 'https://pbs.twimg.com/media/GXqjiNibEAECRYK?format=jpg&name=medium', banner:'okx',status:"New", favourite:0,rase_is:1, review:"Dự án đã gọi vốn thành công 1M$",rase_1:"Okx ventus", rase_2:"BinanceLabs", rase_3:"Captial" ,time_end:"2024-12-31T00:00:00",view:81,type:5,isPinned: false },
@@ -108,7 +115,11 @@ export default function Trading() {
                 className="sm:col-span-2" x-chunk="dashboard-05-chunk-0"
               >
                 <CardHeader className="pb-3">
+<<<<<<< HEAD
                   <CardTitle className="flex justify-between  md:text-center"> <h3 className="text-md">Hoàn phí giao dịch 70% </h3> 
+=======
+                  <CardTitle className="flex justify-between"> <h3 className="text-md">Hoàn phí giao dịch 70% </h3> 
+>>>>>>> f8fffed5c515d8fc68647efbf3c51287e0ffed69
                   <Badge className="text-sm">Mỗi tháng bạn sẽ được Hoàn Phí giao dịch</Badge> </CardTitle>
                   <CardDescription className="g text-balance leading-relaxed w-full">
                   Hoàn phí giao dịch trên các sàn crypto như Binance, MEXC, BingX, và OKX là một trong những lợi ích lớn cho người dùng khi thực hiện giao dịch tiền điện tử. Đây là chương trình nhằm khuyến khích các nhà giao dịch tham gia nhiều hơn vào hệ sinh thái của sàn bằng cách giảm bớt chi phí giao dịch. Mỗi sàn sẽ có những chính sách hoàn phí khác nhau, thường dựa trên khối lượng giao dịch, loại token được giao dịch hoặc việc sử dụng token nội bộ 
