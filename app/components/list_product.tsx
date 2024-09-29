@@ -10,6 +10,7 @@ import bingx from "../../public/images/bingxlogo.png"
 import okx from "../../public/images/okxlogo.png"
 import bybit from "../../public/images/bybitlogo2.png"
 import bitget from "../../public/images/bitget.png"
+import tele from "../../public/images/tele2.jpg"
 // import logbingx from "../../public/images/bingxlogo.png"
 // import { Separator } from "@/components/ui/separator"
 // import choiceas from "../../public/images/choice.png"
@@ -28,6 +29,7 @@ interface Product {
     time_end:string;
     view:number;
     type:number; //1 binance 2 okx 3 bybit 4 bingx 5 mexc 6 biget
+    isPinned?: boolean; 
 
 }
 
@@ -49,7 +51,7 @@ import {
 } from "@/components/ui/pagination"; // Adjust the import path as necessary
 
 
-import { Star , Eye, CircleDollarSign} from 'lucide-react';
+import { Star , Eye, CircleDollarSign, Pin} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 // ListProduct component accepting data as a prop
 const productsPerPage = 18; // Adjust the number of products per page as needed
@@ -94,24 +96,27 @@ export function ListProduct({ data }: ListProductProps) {
                   style={{minHeight:"12rem", maxHeight:"12.5rem"}}
                 />
               </div>
-              {product.type <=6?
-              <div className='item-banner absolute top-5 left-1 rounded-md bg-gray-900 py-1 px-1'>
+              {product.type <=7?
+              <div className='item-banner absolute top-5 left-1 rounded-md shadow-md py-1 px-1 bg-neutral-800'>
                 <Image 
                   loading='lazy'
-                  src={product.type == 1? binancelogo:product.type == 2? okx:product.type == 3? bybit:product.type == 4? bingx:product.type == 5? logomexc:bitget} // Assuming banner is an image URL
+                  src={product.type == 1? binancelogo:product.type == 2? okx:product.type == 3? bybit:product.type == 4? bingx:product.type == 5? logomexc: product.type == 6?bitget:product.type == 7? tele:""} // Assuming banner is an image URL
                   alt={product.title} 
                   className="w-full h-auto object-cover rounded-sm" 
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 10vw, 5vw"
-                  width={product.type == 1?5:20} 
-                  height={product.type == 1?5:20} 
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 30vw, 30vw"
+                  width={product.type == 1? 5:product.type == 2?30:product.type == 5?30:20} 
+                  height={product.type == 1? 5:product.type == 2?30:product.type == 5?30:20} 
                 />
               </div>:""
                 }
+                
               <div className='item-banner absolute top-2   right-1 rounded-md bg-background-gray-300'>
                  <div className='status bg-gray-950 px-1 py-1 w-10 text-left rounded-md text-white text-sm opacity-80 '>
                     {product.status}
+                   {product.isPinned == true?  <span><Pin className='rotate-45 color-slate-700'></Pin></span>:""}
                  </div>
               </div>
+             
             </div>
             <div className='p-2 flex-1 flex flex-col justify-between bg-gray-100  rounded-bl-md rounded-br-md ' style={{minHeight:"12.8rem", maxHeight:"12.888rem"}}>
             <div className='whitespace-normal line-clamp-2 break-words min-h-[2.5rem] text-sm  text-gray-900 text-align-center'>

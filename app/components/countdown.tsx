@@ -1,48 +1,74 @@
-"use client"
-  
+"use client";
+
 import { useState, useEffect } from "react";
 
-// Define the props type for the countdown component
 interface CountdownProps {
-  targetDate: string; // Target date in string format, e.g., "2024-12-31T00:00:00"
+  targetDate: string; // Ví dụ: "2024-12-31T00:00:00"
 }
 
 const Countdown = ({ targetDate }: CountdownProps) => {
-  // State to store the remaining time
-  const [timeLeft, setTimeLeft] = useState({
+  const [timeLeft, setTimeLeft] = useState<{
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+    finished: boolean;
+  }>({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
+    finished: false,
   });
 
   useEffect(() => {
-    // Function to calculate the remaining time
+    // Hàm tính toán thời gian còn lại
     const calculateTimeLeft = () => {
-      const difference = +new Date(targetDate) - +new Date();
+      const targetTime = new Date(targetDate).getTime(); // Chuyển targetDate sang milliseconds
+      const now = new Date().getTime(); // Thời gian hiện tại tính bằng milliseconds
+      const difference = targetTime - now;
+
       if (difference > 0) {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
           hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
+          minutes: Math.floor((difference / (1000 * 60)) % 60),
           seconds: Math.floor((difference / 1000) % 60),
+          finished: false,
         });
       } else {
-        // Set to 0 when countdown finishes
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        // Đặt finished thành true khi đếm ngược kết thúc
+        setTimeLeft({
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+          finished: true,
+        });
+        // Dừng interval khi đếm ngược kết thúc
+        clearInterval(timer);
       }
     };
 
-    // Update every second
+    // Gọi hàm tính toán ngay lập tức
+    calculateTimeLeft();
+
+    // Cập nhật mỗi giây
     const timer = setInterval(calculateTimeLeft, 1000);
 
-    // Clean up the interval when the component unmounts
+    // Xóa interval khi component bị unmount
     return () => clearInterval(timer);
   }, [targetDate]);
 
   return (
-    <div className=" ">
-     <span >{`${timeLeft.days}d : ${timeLeft.hours}h : ${timeLeft.minutes}m : ${timeLeft.seconds}s`}</span>
+    <div className="countdown">
+      {timeLeft.finished ? (
+        <span>Kết thúc</span>
+      ) : (
+        <span>
+          {`${timeLeft.days}d : ${timeLeft.hours}h : ${timeLeft.minutes}m : ${timeLeft.seconds}s`}
+        </span>
+      )}
     </div>
   );
 };

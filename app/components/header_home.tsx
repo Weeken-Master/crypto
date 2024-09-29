@@ -70,14 +70,14 @@ const Header = () => {
             <span className="sr-only">Acme Inc</span>
           </Link>
           <Link
-            href="/home"
+            href="/trang-chu"
             className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
           >
             <Home className="h-5 w-5" />
              Trang chủ
           </Link>
           <Link
-            href="/trading-platform"
+            href="/san-airdrop"
             className="flex items-center gap-4 px-2.5 text-foreground"
           >
             <ChartCandlestick className="h-5 w-5" />

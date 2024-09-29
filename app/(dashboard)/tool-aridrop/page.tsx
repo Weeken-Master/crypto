@@ -2,7 +2,7 @@
 export default function page() {
     return (
      <div className="">
-       tool
+         Đang cập nhật!
      
      </div>
     );
